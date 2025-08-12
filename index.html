@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./bookmark.png">
+    <title>Bookmark</title>
+  </head>
+  <body>
+    <div class="bookmark position-relative">
+      <div class="container pt-5 ">
+        <h1 class="head text-center ">Bookmarker</h1>
+        <div class="bookmark-body my-5"></div>
+
+        <div class=" title w-100">
+            <h2 class="text-center"><i class="fa-solid fa-bookmark fa-sm"></i> Bookmark your favorite sites <i class="fa-solid fa-bookmark fa-sm"></i></i></h2>
+        </div>
+
+        <div class="group my-5">
+            
+            <div class="mb-4">
+                <label for="formGroupExampleInput" class="form-label ms-1"><i class="fa-solid fa-book-bookmark me-1"></i> Site Name</label>
+                <input oninput="validationName()" type="text" class="form-control" id="siteName" placeholder="Bookmark Name">
+              </div>
+
+            <div class="mt-4">
+                <label for="formGroupExampleInput" class="form-label ms-1"><i class="fa-solid fa-book-bookmark me-1"></i> Site URL</label>
+                <input oninput="validationUrl()" type="url" class="form-control" id="siteUrl" placeholder="Website URL">
+              </div>
+
+              <div class="d-grid gap-2 my-4">
+                <button onclick="addSite()" class="btn btn-danger m-auto px-5" type="button">Submit</button>
+              </div>
+
+              <div class="bookmark-body mt-3"></div>
+        </div>
+      </div>
+
+      <div class="boxMsg d-none" id="msgAppear">
+        <div class="msgError container rounded rounded-3 position-absolute">
+       
+          <div class="d-flex justify-content-between ">
+            <div class="m-3">
+            <i class="fa-solid fa-circle fa-lg" style="color: #f60921;"></i>
+            <i class="fa-solid fa-circle fa-lg" style="color: #FFD43B;"></i>
+            <i class="fa-solid fa-circle fa-lg" style="color: #17e860;"></i>
+            </div>
+            <div class="m-3">
+              <i onclick="closeItem()" class="fa-solid fa-xmark fa-xl close "></i>
+            </div>
+         </div>
+  
+         <p class="p-3 ">Site Name or Url is not valid, Please follow the rules below :</p>
+  
+         <ul class="pb-4">
+          <li><i class="fa-regular fa-circle-right me-2" style="color: #ff0a23;"></i>  Site name must contain at least 3 characters</li>
+          <li><i class="fa-regular fa-circle-right me-2" style="color: #ff0a23;"></i>  Site URL must be a valid one</li>
+         </ul>
+  
+        </div>
+      </div>
+
+      <div class="container pb-4">
+
+        <table class="table text-center">
+            <thead>
+              <tr >
+                <th scope="col"><h5 class="fw-medium">Index</h5></th>
+                <th scope="col"><h5 class="fw-medium">Website Name</h5></th>
+                <th scope="col"><h5 class="fw-medium">Visit</h5></th>
+                <th scope="col"><h5 class="fw-medium">Delete</h5></th>
+              </tr>
+            </thead>
+            <tbody id="displayItem">
+              
+             
+            </tbody>
+          </table>
+      </div>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
